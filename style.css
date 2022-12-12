@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.nav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 9;
+    right: 0;
+}
+
+.nav>.nav-header {
+    display: inline;
+    padding-left: 100px;
+}
+
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav-title>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+    padding-right: 100px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+.nav-links a.active {
+    border-bottom: 3px solid #dda713;
+}
+
+
+section {
+    padding-left: 1.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    height: 100vh;
+}
+
+.slider {
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    height: 100vh;
+    display: flex;
+    overflow-x: scroll;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background: white;
+    transform-origin: center center;
+    transform: scale(1);
+    scroll-snap-align: center;
+    background-size: cover;
+    background-position: center center;
+}
+
+.slide-content {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+
+}
+
+.slide-content img {
+    width: 99vw;
+    opacity: 0.7;
+    z-index: -9;
+}
+
+.slide {
+    animation: slide 20s ease-in-out infinite;
+}
+
+@keyframes slide {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-100%)
+    }
+
+    50%,
+    70% {
+        transform: translateX(-200%)
+    }
+
+    75%,
+    95% {
+        transform: translateX(-300%)
+    }
+}
+
+.wrapper-heading {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.heading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.heading h1 {
+    padding: 20px 40px;
+    font-weight: 700;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.heading h3 {
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.heading h5 {
+    padding: 10px 30px;
+    color: #dadd13;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+#sejarah {
+    padding: 30px 100px;
+    text-align: justify;
+    line-height: 150%;
+    color: #3f3f3f;
+}
+
+#sejarah h2,
+#kontak h2 {
+    width: fit-content;
+    border-bottom: 2px solid #858585;
+    padding-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 4px solid #000;
+}
+
+#about {
+    padding: 100px;
+    text-align: justify;
+    line-height: 150%;
+    color: #3f3f3f;
+}
+
+.grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 4fr 3fr;
+}
+
+.main {
+    padding: 30px;
+}
+
+.side {
+    padding: 30px;
+    line-height: 180%;
+}
+
+.main,
+.side {
+    /* padding: 2%; */
+    border-radius: 10px
+}
+
+.left {
+    /* display: flex; */
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.left img {
+    width: 100%;
+}
+
+.right {
+    margin-bottom: 50px;
+}
+
+@media(max-width: 400px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#kontak {
+    padding: 100px;
+    padding-bottom: 0;
+    text-align: justify;
+    line-height: 150%;
+    color: #3f3f3f;
+}
+
+.social {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.social a {
+    text-decoration: none;
+}
+
+.social a img {
+    height: 30px;
+    margin: 0 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+form input,
+form select {
+    padding: 8px 20px;
+    width: 100%;
+}
+
+form button {
+    background-color: #ffbb00;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+form button:hover {
+    background-color: #dda713;
+}
